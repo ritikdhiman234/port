@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(to left, blue, black);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            padding: 1rem 2rem;
+            box-shadow: 1px 2px 5px blue;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+        header .logo h1{
+            color: white;
+            font-size: 1.8rem;
+        }
+        header .logo h1 span{
+            color:blue;
+        }
+        header nav{
+            display: flex;
+            gap: 2rem;
+
+        }
+        header nav a{
+            text-decoration: none;
+            font-size: 1.1rem;
+            color: white;
+            position: relative;
+        }
+        header nav a::before{
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            opacity: 0;
+            bottom: -2px;
+            background-color: white;
+            transition: all 0.8s;
+        }
+        header nav a:hover::before{
+            width: 100%;
+            opacity: 1;
+        }
+        .hero{
+
+            padding: 8rem 2rem;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .hero .grid .left{
+            display: flex;
+            flex-direction: column;
+            margin-left: 2rem;
+            line-height: 1.6;
+            color: white;
+        }
+        .hero .grid .left h1{
+            font-size: 3rem;
+        }
+        .hero .grid .left h1 span{
+            color: blue;
+        }
+        .hero .grid .left h2{
+            color: blue;
+        }
+        .hero .grid .left .hello{
+            color:blue;
+            font-size: 1.3rem;
+        }
+        .hero .grid .left p{
+            font-size: 1.2rem;
+        
+        }
+        .hero .grid .left .btn{
+            display: flex;
+            gap: 0.5rem;
+        }
+        .hero .grid .left button{
+            padding: 0.5rem 1.5rem;
+            margin-top: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            border-radius: 20px;
+            border: none;
+            box-shadow: 1px 3px 6px black;
+            background-color: blue;
+            color: white;
+            
+        }
+        .hero .grid .right{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero .grid .right img{
+            width: 60%;
+            height: 120%;
+            border-radius: 50%;
+            box-shadow: 1px 3px 4px black;
+        }
+        @media(max-width:768px){
+            header{
+                position: sticky;
+                top: 0px;
+                box-shadow: 1px 2px 5px white;
+            }
+            header .logo h1{
+                font-size: 1.5rem;
+            }
+            header nav{
+                display: none;
+                position: absolute;
+                flex-direction: column;
+                right: 0;
+                top: 68px;
+                width: 200px;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 1px 2px 5px white;
+            }
+            .hero .grid{
+                grid-template-columns: repeat(1 , 1fr);
+            }
+            .hero  .grid .left h1{
+                font-size: 1.5rem;
+            }
+            .hero  .grid .left p{
+                font-size: 1rem;
+            }
+            .hero  .grid .left button{
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+            .hero  .grid .right img{
+                margin-top: 5rem;
+                width: 90%;
+                height: 120%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Ritik <span>Dhiman</span></h1>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="grid">
+            <div class="left">
+                <p class="hello">Hello, I'm</p>
+                <h1>Ritik <span>Dhiman</span></h1>
+                <h2>Full Stack Web Developer</h2>
+                <p>I build modern and responsive web applications using HTML, CSS, JavaScript, React, and I love expioring new technologies like Linux, AWS and Dockar</p>
+                <div class="btn">
+                    <button>View My Project</button>
+                    <button>Contact Me</button>
+                </div>
+            </div>
+            <div class="right">
+                <img src="ritik.jpg" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
